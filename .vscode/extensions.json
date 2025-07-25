@@ -1,0 +1,28 @@
+{
+    "recommendations": [
+        // Git and Version Control
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        
+        // .NET Development
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "jmrog.vscode-nuget-package-manager",
+        
+        // API Development and Testing
+        "humao.rest-client",
+        "42crunch.vscode-openapi",
+        
+        // Docker
+        "ms-azuretools.vscode-docker",
+        
+        // Code Quality and Formatting
+        "editorconfig.editorconfig",
+        "ms-vscode.vscode-json",
+        
+        // General Productivity
+        "ms-vscode.powershell",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
