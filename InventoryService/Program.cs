@@ -12,7 +12,8 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
+// Remove .NET 9 specific OpenApi - use Swagger instead for .NET 8
+// builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -48,7 +49,8 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    // Remove .NET 9 specific MapOpenApi - use Swagger instead for .NET 8
+    // app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

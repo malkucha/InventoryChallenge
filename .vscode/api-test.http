@@ -1,0 +1,68 @@
+### Inventory Service API Testing
+### This file can be used with the REST Client extension in VS Code
+### to test the Inventory Service API endpoints
+
+# Set the base URL (adjust port if needed)
+@baseUrl = https://localhost:7297
+@inventoryUrl = {{baseUrl}}/api/inventory
+
+### Health Check (if available)
+GET {{baseUrl}}/health
+
+### Get All Inventory Items
+GET {{inventoryUrl}}
+Accept: application/json
+
+### Get Inventory Item by ID
+GET {{inventoryUrl}}/1
+Accept: application/json
+
+### Create New Inventory Item
+POST {{inventoryUrl}}
+Content-Type: application/json
+
+{
+    "name": "Test Product",
+    "description": "A test product for the inventory",
+    "quantity": 100,
+    "price": 29.99,
+    "category": "Electronics"
+}
+
+### Update Inventory Item
+PUT {{inventoryUrl}}/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Updated Product",
+    "description": "An updated test product",
+    "quantity": 150,
+    "price": 34.99,
+    "category": "Electronics"
+}
+
+### Partially Update Inventory Item
+PATCH {{inventoryUrl}}/1
+Content-Type: application/json
+
+{
+    "quantity": 75
+}
+
+### Delete Inventory Item
+DELETE {{inventoryUrl}}/1
+
+### Search Inventory Items
+GET {{inventoryUrl}}/search?query=test
+Accept: application/json
+
+### Get Inventory Items by Category
+GET {{inventoryUrl}}/category/Electronics
+Accept: application/json
+
+### Get Low Stock Items (if endpoint exists)
+GET {{inventoryUrl}}/low-stock
+Accept: application/json
+
+###
